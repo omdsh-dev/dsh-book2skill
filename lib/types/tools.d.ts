@@ -2,7 +2,7 @@
  * Agent-facing tools: deterministic steps (parse, install, state) are host
  * tools; understanding and generation stay with the agent. Gate tools
  * return the gate's waiting state instead of fabricating progress.
- * @module @dsh-external/dsh-book2skill/tools
+ * @module dsh-book2skill/tools
  */
 import type { Book2SkillService } from './service.ts';
 /** Tool names (kept in one place for diagnostics + tests). */

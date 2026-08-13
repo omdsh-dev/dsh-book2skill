@@ -18,7 +18,7 @@
  *   GET  /book2skill/assets/:name             → bundled SVG assets
  *
  * All handlers are loopback-guarded (the Host header must be loopback).
- * @module @dsh-external/dsh-book2skill/routes
+ * @module dsh-book2skill/routes
  */
 import type { Book2SkillService } from './service.ts';
 export declare function registerBook2SkillRoutes(service: Book2SkillService): () => void;

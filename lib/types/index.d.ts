@@ -14,7 +14,7 @@
  * Export shape: function/namespace plugin (name/inject/apply, NO default —
  * a stray `export default` would collapse the module via the Loader's
  * unwrapExports and drop `inject`).
- * @module @dsh-external/dsh-book2skill
+ * @module dsh-book2skill
  */
 import type { Context } from '@deepseek-ai/cordis';
 export declare const name = "dsh-book2skill";

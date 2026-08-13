@@ -7,7 +7,7 @@
  * 2: SKILL.md draft verdict, 3: install target confirmation). The whole
  * record lives in the storage domain so a job survives restarts and
  * cross-session resume; the panel polls the snapshot endpoints.
- * @module @dsh-external/dsh-book2skill/types
+ * @module dsh-book2skill/types
  */
 /** The five timeline stages. */
 export type JobStage = 1 | 2 | 3 | 4 | 5;

@@ -10,7 +10,7 @@
  * references the host's zod; the runtime contract is structural (name +
  * tables + value schemas), and the zod object this module builds is the
  * very schema the domain facility validates against.
- * @module @dsh-external/dsh-book2skill/domain
+ * @module dsh-book2skill/domain
  */
 import z from 'zod';
 export declare const Book2SkillJobSchema: z.ZodObject<{
