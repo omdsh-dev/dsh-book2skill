@@ -1,0 +1,99 @@
+{
+  "name": "dsh-book2skill",
+  "version": "0.1.1",
+  "description": "DSH book-to-skill plugin: a 5-stage long task (fetch → parse → understand → generate → install) with 3 human gates, host tools for the agent and a browser timeline panel",
+  "license": "BSD-3-Clause",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "setup:dsh-workspace": "node scripts/setup-dsh-workspace.mjs",
+    "build": "node scripts/build.mjs",
+    "typecheck": "npm run typecheck:src && npm run typecheck:tests",
+    "typecheck:src": "node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "typecheck:tests": "node node_modules/typescript/bin/tsc -p tsconfig.test.json --noEmit",
+    "test": "node --test tests/*.test.ts",
+    "prepack": "npm run clean && npm run typecheck && npm test && npm run build"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1-rc.1",
+    "@deepseek-ai/dsh-client-runtime": ">=0.0.1-rc.1 <0.0.2",
+    "@deepseek-ai/dsh-client-ui-conversation": ">=0.0.1-rc.1 <0.0.2",
+    "@deepseek-ai/dsh-client-ui-slots": ">=0.0.1-rc.1 <0.0.2",
+    "@deepseek-ai/dsh-host-directory-picker": ">=0.0.1-rc.1 <0.0.2",
+    "@deepseek-ai/dsh-host-webserver": ">=0.0.1-rc.2 <0.0.2",
+    "@deepseek-ai/dsh-shell": ">=0.0.1-rc.2 <0.0.2",
+    "@deepseek-ai/dsh-storage-domain": ">=0.0.1-rc.1 <0.0.2",
+    "@deepseek-ai/dsh-tools": ">=0.0.1-rc.1 <0.0.2",
+    "@deepseek-ai/dsh-web": ">=0.0.1-rc.1 <0.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": { "optional": true },
+    "@deepseek-ai/dsh-client-runtime": { "optional": true },
+    "@deepseek-ai/dsh-client-ui-conversation": { "optional": true },
+    "@deepseek-ai/dsh-client-ui-slots": { "optional": true },
+    "@deepseek-ai/dsh-host-directory-picker": { "optional": true },
+    "@deepseek-ai/dsh-host-webserver": { "optional": true },
+    "@deepseek-ai/dsh-shell": { "optional": true },
+    "@deepseek-ai/dsh-storage-domain": { "optional": true },
+    "@deepseek-ai/dsh-tools": { "optional": true },
+    "@deepseek-ai/dsh-web": { "optional": true },
+    "react": { "optional": true },
+    "react-dom": { "optional": true }
+  },
+  "devDependencies": {
+    "@types/node": "22.20.0",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "lightningcss": "1.32.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tsdown": "0.22.2",
+    "typescript": "6.0.3"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ]
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-labelledby="t d">
+  <title id="t">Install stage</title>
+  <desc id="d">A downward arrow entering a tray with a checkmark.</desc>
+
+  <!-- down arrow -->
+  <g stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 5 L24 20"/>
+    <path d="M17 13 L24 21 L31 13"/>
+  </g>
+
+  <!-- tray -->
+  <path d="M12 26 L36 26 L36 37 Q36 40 33 40 L15 40 Q12 40 12 37 Z" stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- checkmark -->
+  <path d="M17 33 L21 37 L31 29" stroke="#4F6EF7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

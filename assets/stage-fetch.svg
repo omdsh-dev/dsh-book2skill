@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-labelledby="t d">
+  <title id="t">Fetch stage</title>
+  <desc id="d">A book with a download arrow pointing into it.</desc>
+
+  <!-- download arrow -->
+  <g stroke="#4F6EF7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 5 L24 23"/>
+    <path d="M17 16 L24 24 L31 16"/>
+  </g>
+
+  <!-- open book -->
+  <g stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 30 C19 27 13 27 9 30 L9 42 C13 39 19 39 24 42 Z"/>
+    <path d="M24 30 C29 27 35 27 39 30 L39 42 C35 39 29 39 24 42 Z"/>
+    <path d="M24 30 L24 42"/>
+  </g>
+</svg>

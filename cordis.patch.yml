@@ -1,0 +1,11 @@
+# dsh-book2skill bundle patch. The browser half is discovered through the
+# package dsh.client manifest; this row mounts the host half into the
+# composition (host-plane: storage domain, HTTP routes, agent tools).
+# OCR decoupling: this row does NOT inject paddleOcr — the plugin probes
+# ctx.get('paddleOcr') at call time and falls back to a direct HTTP call
+# with a clear message when the dsh-paddle-ocr service is not installed.
+# Install the package with `dsh plugin add`; do not copy this row into the
+# profile patch, because the Profile Bundle applies it exactly once.
+- insert:
+    - id: book2skill
+      name: dsh-book2skill

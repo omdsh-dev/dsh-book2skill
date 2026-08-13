@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" role="img" aria-labelledby="t d">
+  <title id="t">Books to Skill plugin icon</title>
+  <desc id="d">An open book with sparks rising from its pages.</desc>
+
+  <defs>
+    <!-- Four-point sparkle star, centred on 0,0 -->
+    <path id="spark" d="M0 -7 L1.8 -1.8 L7 0 L1.8 1.8 L0 7 L-1.8 1.8 L-7 0 L-1.8 -1.8 Z"/>
+  </defs>
+
+  <!-- open book -->
+  <g stroke="#6B7280" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 82 C46 76 28 76 16 82 L16 108 C28 102 46 102 64 108 Z"/>
+    <path d="M64 82 C82 76 100 76 112 82 L112 108 C100 102 82 102 64 108 Z"/>
+    <path d="M64 82 L64 108"/>
+  </g>
+
+  <!-- page text hints -->
+  <g stroke="#9CA3AF" stroke-width="2" stroke-linecap="round">
+    <path d="M28 92 L46 92"/>
+    <path d="M28 99 L44 99"/>
+    <path d="M82 92 L100 92"/>
+    <path d="M82 99 L96 99"/>
+  </g>
+
+  <!-- rising sparks -->
+  <g fill="#4F6EF7">
+    <use href="#spark" transform="translate(40 42) scale(1.1)"/>
+    <use href="#spark" transform="translate(74 22) scale(1.6)"/>
+    <use href="#spark" transform="translate(52 12) scale(0.8)"/>
+    <use href="#spark" transform="translate(94 46) scale(0.7)"/>
+    <circle cx="30" cy="22" r="2.4"/>
+    <circle cx="98" cy="28" r="1.8"/>
+    <circle cx="62" cy="54" r="1.6"/>
+  </g>
+</svg>

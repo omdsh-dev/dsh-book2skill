@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-labelledby="t d">
+  <title id="t">Generate stage</title>
+  <desc id="d">A gear producing a document.</desc>
+
+  <!-- gear -->
+  <g stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="19" cy="19" r="8.5"/>
+    <circle cx="19" cy="19" r="3"/>
+    <path d="M19 6 L19 9.5"/>
+    <path d="M19 32 L19 28.5"/>
+    <path d="M6 19 L9.5 19"/>
+    <path d="M32 19 L28.5 19"/>
+    <path d="M9.8 9.8 L12.3 12.3"/>
+    <path d="M28.2 28.2 L25.7 25.7"/>
+    <path d="M28.2 9.8 L25.7 12.3"/>
+    <path d="M9.8 28.2 L12.3 25.7"/>
+  </g>
+
+  <!-- document -->
+  <g stroke="#4F6EF7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M23 23 L37 23 L42 28 L42 44 L23 44 Z"/>
+    <path d="M37 23 L37 28 L42 28"/>
+  </g>
+
+  <!-- document text lines -->
+  <g stroke="#6B7280" stroke-width="2" stroke-linecap="round">
+    <path d="M27 33 L38 33"/>
+    <path d="M27 38 L35 38"/>
+  </g>
+</svg>

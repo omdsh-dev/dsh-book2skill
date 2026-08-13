@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none" role="img" aria-labelledby="t d">
+  <title id="t">Empty state</title>
+  <desc id="d">A book being dropped into a dashed drop zone.</desc>
+
+  <defs>
+    <path id="spark" d="M0 -7 L1.8 -1.8 L7 0 L1.8 1.8 L0 7 L-1.8 1.8 L-7 0 L-1.8 -1.8 Z"/>
+  </defs>
+
+  <!-- dashed drop zone -->
+  <rect x="120" y="90" width="400" height="220" rx="24" stroke="#6B7280" stroke-width="2" stroke-dasharray="12 10"/>
+
+  <!-- drop arrow -->
+  <g stroke="#4F6EF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M320 46 L320 120"/>
+    <path d="M300 100 L320 122 L340 100"/>
+  </g>
+
+  <!-- open book -->
+  <g stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M320 176 C292 168 264 168 246 176 L246 268 C264 260 292 260 320 268 Z"/>
+    <path d="M320 176 C348 168 376 168 394 176 L394 268 C376 260 348 260 320 268 Z"/>
+    <path d="M320 176 L320 268"/>
+  </g>
+
+  <!-- page lines -->
+  <g stroke="#9CA3AF" stroke-width="2" stroke-linecap="round">
+    <path d="M262 200 L296 200"/>
+    <path d="M262 214 L292 214"/>
+    <path d="M262 228 L296 228"/>
+    <path d="M344 200 L378 200"/>
+    <path d="M344 214 L374 214"/>
+    <path d="M344 228 L378 228"/>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#4F6EF7">
+    <use href="#spark" transform="translate(220 132) scale(1.2)"/>
+    <use href="#spark" transform="translate(420 132) scale(1.2)"/>
+    <use href="#spark" transform="translate(180 210) scale(0.8)"/>
+    <use href="#spark" transform="translate(460 210) scale(0.8)"/>
+    <circle cx="270" cy="118" r="2.5"/>
+    <circle cx="372" cy="110" r="2"/>
+  </g>
+</svg>
