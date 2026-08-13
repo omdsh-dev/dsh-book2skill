@@ -233,7 +233,7 @@ function NewJobForm(props: {
           <input
             className={styles.input}
             value={path}
-            placeholder="/home/you/books/某书.epub"
+            placeholder="/path/to/books/某书.epub"
             onChange={event => setPath(event.target.value)}
           />
           <button className={styles.secondaryButton} onClick={() => setPickerOpen(true)}>浏览…</button>
