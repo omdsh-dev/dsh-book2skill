@@ -1,6 +1,6 @@
 {
   "name": "dsh-book2skill",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "DSH book-to-skill plugin: a 5-stage long task (fetch → parse → understand → generate → install) with 3 human gates, host tools for the agent and a browser timeline panel",
   "license": "BSD-3-Clause",
   "publishConfig": {
@@ -52,15 +52,15 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1-rc.1",
-    "@deepseek-ai/dsh-client-runtime": ">=0.0.1-rc.1 <0.0.2",
-    "@deepseek-ai/dsh-client-ui-conversation": ">=0.0.1-rc.1 <0.0.2",
-    "@deepseek-ai/dsh-client-ui-slots": ">=0.0.1-rc.1 <0.0.2",
-    "@deepseek-ai/dsh-host-directory-picker": ">=0.0.1-rc.1 <0.0.2",
-    "@deepseek-ai/dsh-host-webserver": ">=0.0.1-rc.2 <0.0.2",
-    "@deepseek-ai/dsh-shell": ">=0.0.1-rc.2 <0.0.2",
-    "@deepseek-ai/dsh-storage-domain": ">=0.0.1-rc.1 <0.0.2",
-    "@deepseek-ai/dsh-tools": ">=0.0.1-rc.1 <0.0.2",
-    "@deepseek-ai/dsh-web": ">=0.0.1-rc.1 <0.0.2",
+    "@deepseek-ai/dsh-client-runtime": ">=0.1.0-rc.3 <0.2.0",
+    "@deepseek-ai/dsh-client-ui-conversation": ">=0.1.0-rc.3 <0.2.0",
+    "@deepseek-ai/dsh-client-ui-slots": ">=0.1.0-rc.3 <0.2.0",
+    "@deepseek-ai/dsh-host-directory-picker": ">=0.1.0-rc.3 <0.2.0",
+    "@deepseek-ai/dsh-host-webserver": ">=0.1.0-rc.3 <0.2.0",
+    "@deepseek-ai/dsh-shell": ">=0.1.0-rc.3 <0.2.0",
+    "@deepseek-ai/dsh-storage-domain": ">=0.1.0-rc.3 <0.2.0",
+    "@deepseek-ai/dsh-tools": ">=0.1.0-rc.3 <0.2.0",
+    "@deepseek-ai/dsh-web": ">=0.1.0-rc.3 <0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

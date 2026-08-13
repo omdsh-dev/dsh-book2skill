@@ -1,7 +1,10 @@
-import { existsSync, lstatSync, mkdirSync, readlinkSync, symlinkSync } from 'node:fs'
+import { existsSync, lstatSync, mkdirSync, readlinkSync, symlinkSync, unlinkSync } from 'node:fs'
 import { dirname, relative, resolve } from 'node:path'
 
 const root = process.cwd()
+const nodeModulesRoot = process.env.DSH_NODE_MODULES_ROOT === undefined
+  ? undefined
+  : resolve(process.env.DSH_NODE_MODULES_ROOT)
 const workspaceRoot = process.env.DSH_WORKSPACE_ROOT === undefined
   ? resolve(root, '../dsh-workspace')
   : resolve(process.env.DSH_WORKSPACE_ROOT)
@@ -18,14 +21,20 @@ const links = {
   '@deepseek-ai/dsh-client-ui-conversation': 'packages/client/ui-conversation',
 }
 
-if (!existsSync(workspaceRoot)) {
+if (nodeModulesRoot === undefined && !existsSync(workspaceRoot)) {
   throw new Error(`DSH workspace does not exist: ${workspaceRoot}. Set DSH_WORKSPACE_ROOT to a local DSH workspace.`)
+}
+if (nodeModulesRoot !== undefined && !existsSync(nodeModulesRoot)) {
+  throw new Error(`DSH node_modules does not exist: ${nodeModulesRoot}`)
 }
 
 for (const [packageName, workspacePath] of Object.entries(links)) {
-  const target = resolve(workspaceRoot, workspacePath)
+  const target = nodeModulesRoot === undefined
+    ? resolve(workspaceRoot, workspacePath)
+    : resolve(nodeModulesRoot, packageName)
   const destination = resolve(root, 'node_modules', packageName)
   if (!existsSync(target)) {
+    if (nodeModulesRoot !== undefined) throw new Error(`DSH package does not exist: ${target}`)
     console.warn(`skip ${packageName}: ${target} does not exist`)
     continue
   }
@@ -38,8 +47,10 @@ function ensureLink(destination, target) {
     if (lstatSync(destination).isSymbolicLink()) {
       const current = resolve(dirname(destination), readlinkSync(destination))
       if (current === target) return
+      unlinkSync(destination)
+    } else {
+      throw new Error(`Refusing to replace existing dependency: ${destination}`)
     }
-    throw new Error(`Refusing to replace existing dependency: ${destination}`)
   }
   const linkTarget = process.platform === 'win32' ? target : relative(dirname(destination), target)
   for (let attempt = 0; attempt < 2; attempt++) {

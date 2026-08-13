@@ -41,23 +41,23 @@
 
 ## 兼容性
 
-- DSH `>=0.0.1-rc.2 <0.0.2`（使用 rc.2 的 `ctx.shell` 能力契约）
+- DSH `>=0.1.0-rc.3 <0.2.0`（使用 rc.3 的 `ctx.shell` 能力契约）
 - Node.js `^22.19.0 || >=24.0.0`
 - Profile Bundle：`package.json#dsh.bundle.patch` 自动应用 `cordis.patch.yml`
 
 ## 构建与安装
 
 ```bash
-# 1. 用当前 DSH rc.2 源码链接类型依赖并完整验收
+# 1. 用当前 DSH rc.3 npm 运行时链接类型依赖并完整验收
 npm ci
-DSH_WORKSPACE_ROOT=/path/to/dsh-rc2 npm run setup:dsh-workspace
+DSH_NODE_MODULES_ROOT=/path/to/dsh-rc3/node_modules npm run setup:dsh-workspace
 npm run typecheck
 npm test
 npm run build
 
 # 2. 打包并通过插件命令安装到目标 profile
 npm pack
-dsh plugin --profile web add file:/absolute/path/dsh-book2skill-0.1.1.tgz
+dsh plugin --profile web add file:/absolute/path/dsh-book2skill-0.1.2.tgz
 
 # 3. 重启 dsh web（宿主行需要进程重启），浏览器刷新后对话区出现「书籍转技能」标签
 ```

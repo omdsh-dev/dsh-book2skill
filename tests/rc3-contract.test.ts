@@ -8,15 +8,18 @@ import { shellCommand, shellQuote } from '../src/shell.ts'
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const read = (path: string): string => readFileSync(resolve(root, path), 'utf8')
 
-test('rc.2 host contract uses shell everywhere and publishes compatible peers', () => {
+test('rc.3 host contract uses shell everywhere and publishes compatible peers', () => {
   const manifest = JSON.parse(read('package.json')) as {
     dsh: { bundle: { patch: string }; client: { inject: string[] } }
     peerDependencies: Record<string, string>
   }
   assert.equal(manifest.dsh.bundle.patch, './cordis.patch.yml')
-  assert.equal(manifest.peerDependencies['@deepseek-ai/dsh-shell'], '>=0.0.1-rc.2 <0.0.2')
+  assert.equal(manifest.peerDependencies['@deepseek-ai/dsh-shell'], '>=0.1.0-rc.3 <0.2.0')
   assert.equal(manifest.peerDependencies['@deepseek-ai/dsh-bash'], undefined)
   assert.ok(manifest.dsh.client.inject.includes('@deepseek-ai/dsh-client-ui-conversation'))
+  for (const [name, range] of Object.entries(manifest.peerDependencies)) {
+    if (name.startsWith('@deepseek-ai/dsh-')) assert.equal(range, '>=0.1.0-rc.3 <0.2.0', name)
+  }
 
   const source = [
     'src/context.d.ts', 'src/index.ts', 'src/parse.ts', 'src/zlib.ts',
