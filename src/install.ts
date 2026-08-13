@@ -3,7 +3,7 @@
  * the chosen targets (~/.claude/skills, ~/.codex/skills, and the kk_skill
  * sync repo). Runs host-side with plain Node fs; each target reports its
  * own outcome so a partial failure is visible per target.
- * @module @dsh-external/dsh-book2skill/install
+ * @module dsh-book2skill/install
  */
 
 import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'

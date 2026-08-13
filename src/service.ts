@@ -2,7 +2,7 @@
  * Book2SkillService: the single host-side seam both the agent tools and the
  * HTTP panel endpoints call. It owns the storage domain handle, job
  * transitions, parse orchestration, gates, z-lib transfers, and install.
- * @module @dsh-external/dsh-book2skill/service
+ * @module dsh-book2skill/service
  */
 
 import { existsSync, copyFileSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'

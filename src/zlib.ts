@@ -8,7 +8,7 @@
  * log in first). Transfers go through curl (headers + binary support),
  * converting the Playwright cookie JSON into a Netscape cookie jar on the
  * fly — nothing is embedded and nothing is written to the repo.
- * @module @dsh-external/dsh-book2skill/zlib
+ * @module dsh-book2skill/zlib
  */
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'

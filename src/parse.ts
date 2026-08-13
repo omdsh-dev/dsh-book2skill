@@ -4,7 +4,7 @@
  * All file work is plain Node fs (host plugin), subprocess work rides
  * ctx.shell. Progress lands on the job record so the panel snapshot shows
  * it while polling.
- * @module @dsh-external/dsh-book2skill/parse
+ * @module dsh-book2skill/parse
  */
 
 import { readdirSync, readFileSync, statSync } from 'node:fs'
