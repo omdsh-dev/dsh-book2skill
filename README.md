@@ -1,5 +1,7 @@
 # dsh-book2skill
 
+**Author / Maintainer:** [@Zacklinkk](https://github.com/Zacklinkk)
+
 书籍转技能（Book → Skill）：DSH 插件包，把一个 5 阶段长任务工作流带进 DeepSeek Harness——
 **获取书籍 → 解析分章 → 深度阅读 → 生成 SKILL.md → 安装**，中途有 **3 个人类门控**。
 
