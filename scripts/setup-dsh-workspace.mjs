@@ -16,9 +16,9 @@ const links = {
   '@deepseek-ai/dsh-web': 'packages/web/web',
   '@deepseek-ai/dsh-host-webserver': 'packages/host/webserver',
   '@deepseek-ai/dsh-host-directory-picker': 'packages/host/directory-picker',
-  '@deepseek-ai/dsh-client-runtime': 'packages/client/runtime',
   '@deepseek-ai/dsh-client-ui-slots': 'packages/client/ui-slots',
   '@deepseek-ai/dsh-client-ui-conversation': 'packages/client/ui-conversation',
+  '@deepseek-ai/dsh-client-ui-renderer': 'packages/client/ui-renderer',
 }
 
 if (nodeModulesRoot === undefined && !existsSync(workspaceRoot)) {
